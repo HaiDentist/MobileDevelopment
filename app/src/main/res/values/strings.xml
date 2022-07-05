@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HaiDentist</string>
+    <string name="welcome_image_login">Welcome Image Login</string>
+    <string name="login">Login</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="button_login">Login</string>
+    <string name="dont_have_acc">Belum punya akun?</string>
+    <string name="sign_up">Sign up</string>
+</resources>
