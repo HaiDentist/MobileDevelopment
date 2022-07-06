@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.dicoding.picodiploma.haidentist.MainActivity
 import com.dicoding.picodiploma.haidentist.R
 import com.dicoding.picodiploma.haidentist.databinding.ActivityLoginBinding
 import com.dicoding.picodiploma.haidentist.databinding.ActivityOnBoardingBinding
@@ -29,6 +30,10 @@ class LoginActivity : AppCompatActivity() {
     private fun setupAction() {
         binding.tvSignup.setOnClickListener {
             startActivity(Intent(this, SignActivity::class.java))
+            finish()
+        }
+        binding.buttonLogin.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
     }
