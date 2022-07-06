@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         loadFragment(HomeFragment())
+        supportActionBar?.hide()
+
 
         bottomNav = binding.bottomNavigationView as BottomNavigationView
         bottomNav.setOnItemReselectedListener {
