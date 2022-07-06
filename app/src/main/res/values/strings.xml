@@ -7,4 +7,15 @@
     <string name="button_login">Login</string>
     <string name="dont_have_acc">Belum punya akun?</string>
     <string name="sign_up">Sign up</string>
+    <string name="title_on_boarding_first_slide">Early Screening</string>
+    <string name="description_on_boarding_first_slide">Mengidentifikasi Gejala Awal Karies dengan kamera</string>
+    <string name="title_on_boarding_second_slide">Daily Treatment</string>
+    <string name="description_on_boarding_second_slide">Memberikan Saran Perawatan Harian Untuk Mencegah Karies</string>
+    <string name="title_on_boarding_third_slide">Consultation</string>
+    <string name="description_on_boarding_third_slide">Layanan telemedisin yang siap siaga  untuk bantu kamu hidup lebih sehat</string>
+    <string name="masuk">Masuk</string>
+    <string name="welcome_image_signup">Welcome Image Signup</string>
+    <string name="have_acc">Sudah punya akun?</string>
+    <string name="name_hint">Nama</string>
+    <string name="button_signup">Daftar</string>
 </resources>

@@ -8,8 +8,10 @@
         <entry key="app/src/main/res/drawable/ic_icon_log_in_hd.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/ic_icon_signup_gigi_hd.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/ic_lock.xml" value="0.189" />
+        <entry key="app/src/main/res/drawable/ic_person.xml" value="0.191" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2828125" />
-        <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.1140625" />
+        <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_sign.xml" value="0.24439849853515627" />
       </map>
     </option>
   </component>
