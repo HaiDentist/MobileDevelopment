@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.dicoding.picodiploma.haidentist.databinding.ActivityMainBinding
+import com.dicoding.picodiploma.haidentist.ui.camera.upload.UploadFragment
 import com.dicoding.picodiploma.haidentist.ui.home.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
@@ -21,15 +22,34 @@ class MainActivity : AppCompatActivity() {
         loadFragment(HomeFragment())
         supportActionBar?.hide()
 
-
         bottomNav = binding.bottomNavigationView as BottomNavigationView
         bottomNav.setOnItemReselectedListener {
                 when(it.itemId) {
                     R.id.homeFragment -> {
                         loadFragment(HomeFragment())
-                        return@setOnItemReselectedListener
+                    }
+                    R.id.cameraResultActivity -> {
+                        loadFragment(UploadFragment())
                     }
                 }
+        }
+
+        bottomNav.setOnItemSelectedListener {
+            when(it.itemId) {
+                R.id.homeFragment -> {
+
+                    loadFragment(HomeFragment())
+
+                    return@setOnItemSelectedListener true
+                }
+                R.id.cameraResultActivity -> {
+                    loadFragment(UploadFragment())
+                    return@setOnItemSelectedListener true
+                }
+                else -> {
+                    false
+                }
+            }
         }
     }
 

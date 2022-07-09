@@ -85,7 +85,7 @@
                 android:layout_marginTop="28dp"
                 android:fontFamily="@font/nunito_bold"
                 android:lines="2"
-                android:text="Periksa Gigimu \n Sekarang!"
+                android:text="@string/periksa_gigimu_nsekarang"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toStartOf="@+id/imageView3"
                 app:layout_constraintHorizontal_bias="0.34"
@@ -119,10 +119,10 @@
             </TextView>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button_gigi"
                 android:layout_width="160dp"
                 android:layout_height="40dp"
-                android:text="Periksa Gigimu!"
+                android:text="@string/periksa_gigimu"
                 android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageView3"
@@ -170,13 +170,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            app:cardCornerRadius="23dp">
+            app:cardCornerRadius="23dp"
+            android:background="">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:background="@color/blue_white"
                 android:layout_width="71dp"
                 android:layout_height="71dp">
-
+                
                 <ImageView
                     android:id="@+id/dokter"
                     android:layout_width="45dp"
