@@ -25,4 +25,7 @@
     <string name="Lanjut">Continue</string>
     <string name="periksa_gigimu">Periksa Gigimu!</string>
     <string name="periksa_gigimu_nsekarang">Periksa Gigimu \nSekarang!</string>
+    <string name="profile">Profile</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="privacy_policy">Privacy Policy</string>
 </resources>

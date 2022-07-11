@@ -7,12 +7,15 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_logo_3"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_logo_3"
         android:supportsRtl="true"
         android:theme="@style/Theme.HaiDentist"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.camera.camerax.CameraActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.auth.sign.SignActivity"
             android:exported="false" />
@@ -31,8 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

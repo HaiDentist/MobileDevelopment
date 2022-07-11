@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -76,7 +75,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#DCEDF9">
+            android:background="@color/blue_white">
 
             <TextView
                 android:id="@+id/textView2"
@@ -171,13 +170,15 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             app:cardCornerRadius="23dp"
-            android:background="">
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:background="@color/blue_white"
                 android:layout_width="71dp"
                 android:layout_height="71dp">
-                
+
                 <ImageView
                     android:id="@+id/dokter"
                     android:layout_width="45dp"
@@ -210,7 +211,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            app:cardCornerRadius="23dp">
+            app:cardCornerRadius="23dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:background="@color/blue_secondary"
@@ -247,7 +251,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            app:cardCornerRadius="23dp">
+            app:cardCornerRadius="23dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="71dp"
@@ -285,7 +292,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            app:cardCornerRadius="23dp">
+            app:cardCornerRadius="23dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:background="@color/blue_secondary"

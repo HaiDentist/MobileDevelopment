@@ -37,6 +37,7 @@
         </TextView>
     </androidx.appcompat.widget.Toolbar>
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/landing"
         android:layout_width="match_parent"
@@ -214,12 +215,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:cardCornerRadius="20dp">
+                app:cardCornerRadius="20dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
 
                     <ImageView
                         android:layout_width="44dp"
