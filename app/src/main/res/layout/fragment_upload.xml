@@ -66,6 +66,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/gambar_gigis"
                         android:layout_width="match_parent"
                         android:layout_height="177dp"
                         android:scaleType="centerCrop"

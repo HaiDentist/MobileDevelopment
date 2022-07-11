@@ -28,4 +28,7 @@
     <string name="profile">Profile</string>
     <string name="account_settings">Account Settings</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="kamera_untuk_ambil_gambar">Kamera Untuk ambil gambar</string>
+    <string name="retake">Retake</string>
+    <string name="check">Check</string>
 </resources>

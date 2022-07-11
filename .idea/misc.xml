@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.11" />
         <entry key="app/src/main/res/drawable/background_button_accent_v2.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bottom_nav_colors.xml" value="0.191" />
+        <entry key="app/src/main/res/drawable/box_accent.xml" value="0.11" />
         <entry key="app/src/main/res/drawable/ic_asset_8.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/ic_icon_log_in_hd.xml" value="0.189" />
@@ -14,18 +15,21 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.11" />
         <entry key="app/src/main/res/drawable/ic_lock.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/ic_person.xml" value="0.191" />
+        <entry key="app/src/main/res/drawable/ic_switch_camera.xml" value="0.11" />
         <entry key="app/src/main/res/layout-v23/fragment_profile.xml" value="0.2703125" />
         <entry key="app/src/main/res/layout/activity_cam.xml" value="0.14351851851851852" />
-        <entry key="app/src/main/res/layout/activity_camera.xml" value="0.14351851851851852" />
+        <entry key="app/src/main/res/layout/activity_camera.xml" value="0.213174890588831" />
         <entry key="app/src/main/res/layout/activity_camera2.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28608623106786807" />
         <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_sign.xml" value="0.24439849853515627" />
+        <entry key="app/src/main/res/layout/box_accent.xml" value="0.2703125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15728607177734377" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_upload.xml" value="0.17817580279181972" />
         <entry key="app/src/main/res/layout/item_row_selfcare.xml" value="0.12946428571428573" />
+        <entry key="app/src/main/res/layout/layout_camera.xml" value="0.221905517578125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.28177083333333336" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_logo_3.xml" value="0.11" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_logo_3_round.xml" value="0.11" />
