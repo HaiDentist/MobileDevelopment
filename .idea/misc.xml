@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/drawable/ic_person.xml" value="0.191" />
         <entry key="app/src/main/res/drawable/ic_switch_camera.xml" value="0.11" />
         <entry key="app/src/main/res/layout-v23/fragment_profile.xml" value="0.2703125" />
+        <entry key="app/src/main/res/layout/activity_analisis.xml" value="0.2612080422130876" />
         <entry key="app/src/main/res/layout/activity_cam.xml" value="0.14351851851851852" />
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.213174890588831" />
         <entry key="app/src/main/res/layout/activity_camera2.xml" value="0.26927083333333335" />
@@ -28,8 +29,11 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15728607177734377" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_upload.xml" value="0.17817580279181972" />
+        <entry key="app/src/main/res/layout/item_row_disease.xml" value="0.27303314208984375" />
+        <entry key="app/src/main/res/layout/item_row_penyakit.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/layout/item_row_selfcare.xml" value="0.12946428571428573" />
         <entry key="app/src/main/res/layout/layout_camera.xml" value="0.221905517578125" />
+        <entry key="app/src/main/res/layout/loading_item.xml" value="0.3765625" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.28177083333333336" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_logo_3.xml" value="0.11" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_logo_3_round.xml" value="0.11" />

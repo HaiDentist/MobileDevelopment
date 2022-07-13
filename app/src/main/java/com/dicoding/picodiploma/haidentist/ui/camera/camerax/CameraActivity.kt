@@ -2,10 +2,13 @@ package com.dicoding.picodiploma.haidentist.ui.camera.camerax
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.util.Rational
 import android.view.Surface
@@ -18,6 +21,8 @@ import com.bumptech.glide.Glide
 import com.dicoding.picodiploma.haidentist.R
 import com.dicoding.picodiploma.haidentist.databinding.ActivityCameraBinding
 import com.dicoding.picodiploma.haidentist.databinding.LayoutCameraBinding
+import com.dicoding.picodiploma.haidentist.ui.analisis.AnalisisActivity
+import com.malkinfo.progressbar.uitel.LoadingDialog
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -40,6 +45,8 @@ class CameraActivity : AppCompatActivity() {
         binding = ActivityCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+
+
 
         //Request Camera Permissions
         if (allPermissionGranted()) {
@@ -71,6 +78,30 @@ class CameraActivity : AppCompatActivity() {
 
         outputDirectory = getOutputDirectory()
 
+        binding.check.setOnClickListener {
+            val bitmap = ((binding.image).drawable as BitmapDrawable).bitmap
+
+            val loading = LoadingDialog(this)
+            loading.startLoading()
+            val handler = Handler()
+            val intent = Intent(this, AnalisisActivity::class.java)
+            handler.postDelayed(object :Runnable{
+                override fun run() {
+                    loading.isDismiss()
+                    startActivity(intent)
+                }
+            },3000)
+        }
+
+        binding.retake.setOnClickListener {
+            binding.cameraView.root.visibility = View.VISIBLE
+            binding.image.visibility = View.GONE
+            binding.borderView.visibility = View.VISIBLE
+            binding.check.visibility = View.GONE
+            binding.retake.visibility = View.GONE
+            binding.layout.visibility = View.GONE
+
+        }
 
 
     }

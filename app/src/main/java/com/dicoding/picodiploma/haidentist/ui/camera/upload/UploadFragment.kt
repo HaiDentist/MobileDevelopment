@@ -53,6 +53,10 @@ class UploadFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.iconCamera.setOnClickListener {
+            startCameraX()
+        }
+
         binding.continueCamera.setOnClickListener{
             val intent = Intent(requireContext(), CameraActivity::class.java)
 
@@ -64,11 +68,18 @@ class UploadFragment : Fragment() {
                 )
                 return@setOnClickListener
             }
-            startActivity(intent)
+//            startActivity(intent)
+            startCameraX()
         }
 
         return view
 
+    }
+
+    //Start CameraX
+    private fun startCameraX() {
+        val intent = Intent(requireContext(), CameraActivity::class.java)
+        launcherIntentCameraX.launch(intent)
     }
 
     private val launcherIntentCameraX =
