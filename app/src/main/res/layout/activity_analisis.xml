@@ -9,7 +9,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="191dp"
+        android:layout_height="151dp"
         android:background="@color/blue_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -179,7 +179,7 @@
         android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/nunito_bold"
         android:text="@string/about"
         android:textColor="@color/black"
@@ -188,14 +188,15 @@
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/kamera_view">
+
     </TextView>
 
     <TextView
         android:id="@+id/deskripsi_penyakit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:lines="10"
-        android:layout_marginTop="5dp"
+        android:lines="8"
+        android:layout_marginTop="3dp"
         android:text="@string/lorem"
         android:layout_marginHorizontal="32dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -209,7 +210,7 @@
         android:id="@+id/penyakit_lain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/nunito_bold"
         android:text="Dapat Menyebabkan :"
         android:textColor="@color/black"
@@ -221,9 +222,10 @@
     </TextView>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="130dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -235,7 +237,7 @@
             android:id="@+id/rv_penyakit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
+            android:layout_marginHorizontal="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -244,6 +246,45 @@
         </androidx.recyclerview.widget.RecyclerView>
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/button_selfcare"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="40dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="Rekomendasi Perawatan Mandiri"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.07999998">
+
+    </Button>
+
+    <Button
+        android:id="@+id/button_rumah_sakit"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:gravity="center_horizontal"
+        android:layout_marginHorizontal="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_selfcare"
+        app:layout_constraintVertical_bias="0.16000003"
+        android:textAllCaps="false"
+        android:fontFamily="@font/nunito_bold"
+        android:textSize="12sp"
+        android:textColor="@color/gray"
+        android:foreground="@drawable/background_button_accent_v3"
+        android:background="@android:color/transparent"
+        android:text="@string/rekomendasi_klinik_terdekat"
+        android:layout_marginTop="-5dp">
+    </Button>
+
 
 
 

@@ -13,6 +13,7 @@ import android.util.Log
 import android.util.Rational
 import android.view.Surface
 import android.view.View
+import android.widget.Toast
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
@@ -22,6 +23,7 @@ import com.dicoding.picodiploma.haidentist.R
 import com.dicoding.picodiploma.haidentist.databinding.ActivityCameraBinding
 import com.dicoding.picodiploma.haidentist.databinding.LayoutCameraBinding
 import com.dicoding.picodiploma.haidentist.ui.analisis.AnalisisActivity
+import com.dicoding.picodiploma.haidentist.utils.Classifier
 import com.malkinfo.progressbar.uitel.LoadingDialog
 import java.io.File
 import java.text.SimpleDateFormat
@@ -37,6 +39,12 @@ class CameraActivity : AppCompatActivity() {
     private var imageCapture: ImageCapture? = null
     private lateinit var cameraBinding: LayoutCameraBinding
 
+
+    private val mInputSize = 150
+    private val mModelPath = "model.tflite"
+    private val mLabelPath = "labels.txt"
+    private lateinit var classifier: Classifier
+
     private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
 
@@ -46,8 +54,7 @@ class CameraActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-
-
+        initClassifier()
         //Request Camera Permissions
         if (allPermissionGranted()) {
             startCamera()
@@ -80,6 +87,9 @@ class CameraActivity : AppCompatActivity() {
 
         binding.check.setOnClickListener {
             val bitmap = ((binding.image).drawable as BitmapDrawable).bitmap
+            val result = classifier.recognizeImage(bitmap)
+
+            runOnUiThread { Toast.makeText(this, result.get(0).title + " " + result.get(0).confidence , Toast.LENGTH_SHORT).show() }
 
             val loading = LoadingDialog(this)
             loading.startLoading()
@@ -104,6 +114,10 @@ class CameraActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun initClassifier() {
+        classifier = Classifier(assets, mModelPath, mLabelPath, mInputSize)
     }
 
     private fun allPermissionGranted() = REQUIRED_PERMISSIONS.all {
