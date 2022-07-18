@@ -17,6 +17,7 @@ import com.dicoding.picodiploma.haidentist.R
 import com.dicoding.picodiploma.haidentist.databinding.FragmentUploadBinding
 import com.dicoding.picodiploma.haidentist.ui.auth.sign.SignActivity
 import com.dicoding.picodiploma.haidentist.ui.camera.camerax.CameraActivity
+import com.dicoding.picodiploma.haidentist.ui.camera.gallery.GalleryActivity
 import com.dicoding.picodiploma.haidentist.utils.rotateBitmap
 import java.io.File
 
@@ -55,6 +56,11 @@ class UploadFragment : Fragment() {
 
         binding.iconCamera.setOnClickListener {
             startCameraX()
+        }
+
+        binding.iconGallery.setOnClickListener {
+            val intent =Intent(requireContext() ,GalleryActivity::class.java )
+            startActivity(intent)
         }
 
         binding.continueCamera.setOnClickListener{

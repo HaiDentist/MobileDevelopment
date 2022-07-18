@@ -110,7 +110,6 @@ class CameraActivity : AppCompatActivity() {
             binding.check.visibility = View.GONE
             binding.retake.visibility = View.GONE
             binding.layout.visibility = View.GONE
-
         }
 
 

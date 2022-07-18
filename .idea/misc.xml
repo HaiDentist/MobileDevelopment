@@ -22,6 +22,7 @@
         <entry key="app/src/main/res/layout/activity_cam.xml" value="0.14351851851851852" />
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.213174890588831" />
         <entry key="app/src/main/res/layout/activity_camera2.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/layout/activity_gallery.xml" value="0.27336883544921875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28608623106786807" />
         <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
@@ -29,7 +30,7 @@
         <entry key="app/src/main/res/layout/box_accent.xml" value="0.2703125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18496398925781254" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/fragment_upload.xml" value="0.17817580279181972" />
+        <entry key="app/src/main/res/layout/fragment_upload.xml" value="0.23805389404296878" />
         <entry key="app/src/main/res/layout/item_row_disease.xml" value="0.27303314208984375" />
         <entry key="app/src/main/res/layout/item_row_penyakit.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/layout/item_row_selfcare.xml" value="0.12946428571428573" />

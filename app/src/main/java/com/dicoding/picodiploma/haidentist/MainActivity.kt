@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.cameraResultActivity -> {
                         loadFragment(UploadFragment())
+
                     }
                 }
         }
