@@ -42,35 +42,27 @@ class GalleryActivity : AppCompatActivity() {
         binding.check.setOnClickListener {
             val bitmap = ((binding.gambarUpload).drawable as BitmapDrawable).bitmap
             val result = classifier.recognizeImage(bitmap)
+            val penyakit = result.get(0).title
 
             runOnUiThread { Toast.makeText(this, result.get(0).title + " " + result.get(0).confidence , Toast.LENGTH_SHORT).show() }
+
+            val loading = LoadingDialog(this)
+            loading.startLoading()
+            val handler = Handler()
+            val intent = Intent(this, AnalisisActivity::class.java)
+            intent.putExtra("penyakit",penyakit)
+            handler.postDelayed(object :Runnable{
+                override fun run() {
+                    loading.isDismiss()
+                    startActivity(intent)
+                }
+            },3000)
         }
     }
 
     private fun initClassifier() {
         classifier = Classifier(assets, mModelPath, mLabelPath, mInputSize)
     }
-
-
-//    binding.check.setOnClickListener {
-//        val bitmap = ((binding.image).drawable as BitmapDrawable).bitmap
-//        val result = classifier.recognizeImage(bitmap)
-//
-//        runOnUiThread { Toast.makeText(this, result.get(0).title + " " + result.get(0).confidence , Toast.LENGTH_SHORT).show() }
-//
-//        val loading = LoadingDialog(this)
-//        loading.startLoading()
-//        val handler = Handler()
-//        val intent = Intent(this, AnalisisActivity::class.java)
-//        handler.postDelayed(object :Runnable{
-//            override fun run() {
-//                loading.isDismiss()
-//                startActivity(intent)
-//            }
-//        },3000)
-//    }
-
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

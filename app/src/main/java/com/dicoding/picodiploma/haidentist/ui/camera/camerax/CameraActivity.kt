@@ -56,6 +56,7 @@ class CameraActivity : AppCompatActivity() {
 
         initClassifier()
         //Request Camera Permissions
+
         if (allPermissionGranted()) {
             startCamera()
         } else {
@@ -88,6 +89,8 @@ class CameraActivity : AppCompatActivity() {
         binding.check.setOnClickListener {
             val bitmap = ((binding.image).drawable as BitmapDrawable).bitmap
             val result = classifier.recognizeImage(bitmap)
+            val penyakit = result.get(0).title
+
 
             runOnUiThread { Toast.makeText(this, result.get(0).title + " " + result.get(0).confidence , Toast.LENGTH_SHORT).show() }
 
@@ -95,6 +98,7 @@ class CameraActivity : AppCompatActivity() {
             loading.startLoading()
             val handler = Handler()
             val intent = Intent(this, AnalisisActivity::class.java)
+            intent.putExtra("penyakit",penyakit)
             handler.postDelayed(object :Runnable{
                 override fun run() {
                     loading.isDismiss()
