@@ -29,14 +29,14 @@ class GalleryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGalleryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
+
         initClassifier()
         image_gallery = binding.gambarUpload
         val button_insert = binding.insert
-
+        gall()
         button_insert.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK)
-            intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            startActivityForResult(intent, GALLERY_REQ_CODE)
+            gall()
         }
 
         binding.check.setOnClickListener {
@@ -62,6 +62,12 @@ class GalleryActivity : AppCompatActivity() {
 
     private fun initClassifier() {
         classifier = Classifier(assets, mModelPath, mLabelPath, mInputSize)
+    }
+
+    private fun gall() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(intent, GALLERY_REQ_CODE)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

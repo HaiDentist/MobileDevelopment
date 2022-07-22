@@ -7,6 +7,7 @@ import com.dicoding.picodiploma.haidentist.databinding.ActivityMainBinding
 import com.dicoding.picodiploma.haidentist.ui.camera.upload.UploadFragment
 import com.dicoding.picodiploma.haidentist.ui.home.HomeFragment
 import com.dicoding.picodiploma.haidentist.ui.profile.ProfileFragment
+import com.dicoding.picodiploma.haidentist.ui.report.ReportFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
                         loadFragment(UploadFragment())
 
                     }
+                    R.id.messageFragment -> {
+                        loadFragment(ReportFragment())
+                    }
                 }
         }
 
@@ -51,6 +55,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.profileFragment -> {
                     loadFragment(ProfileFragment())
+                    return@setOnItemSelectedListener true
+                }
+                R.id.messageFragment -> {
+                    loadFragment(ReportFragment())
                     return@setOnItemSelectedListener true
                 }
                 else -> {

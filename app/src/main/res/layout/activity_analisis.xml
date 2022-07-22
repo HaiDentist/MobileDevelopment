@@ -89,6 +89,7 @@
     </androidx.appcompat.widget.Toolbar>
 
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/kamera_view"
         android:layout_width="match_parent"
@@ -100,43 +101,45 @@
         app:layout_constraintTop_toBottomOf="@+id/view">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/shimmer"
+            android:id="@+id/shimmering"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:cardCornerRadius="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/kamera_view">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/blue_white">
+                android:background="@color/white">
 
                 <com.facebook.shimmer.ShimmerFrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/gray">
 
                 </com.facebook.shimmer.ShimmerFrameLayout>
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         </androidx.cardview.widget.CardView>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white">
 
-
-
             <TextView
                 android:id="@+id/name_penyakit"
-                android:layout_width="wrap_content"
+                android:layout_width="210dp"
                 android:layout_height="wrap_content"
                 android:text="White Node"
-                android:textSize="20sp"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/nunito_bold"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/disease_profile"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.131"
                 app:layout_constraintStart_toEndOf="@+id/disease_profile"
                 app:layout_constraintTop_toTopOf="@+id/disease_profile"
                 app:layout_constraintVertical_bias="0.169">
@@ -144,18 +147,17 @@
 
             <TextView
                 android:id="@+id/sub_penyakit"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_regular"
                 android:text="Gejala Awal Munculnya Karies"
                 android:textColor="@color/black"
                 android:textSize="13sp"
+                android:lines="2"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="6dp"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/name_penyakit"
                 app:layout_constraintTop_toBottomOf="@+id/name_penyakit">
-
             </TextView>
 
             <androidx.cardview.widget.CardView
@@ -207,6 +209,7 @@
         android:fontFamily="@font/nunito_bold"
         android:text="@string/about"
         android:textColor="@color/black"
+        android:alpha="0"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
@@ -220,6 +223,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:lines="8"
+        android:alpha="0"
         android:layout_marginTop="3dp"
         android:text="@string/lorem"
         android:layout_marginHorizontal="32dp"
@@ -236,7 +240,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/nunito_bold"
-        android:text="Dapat Menyebabkan :"
+        android:text="@string/dapat_menyebabkan"
+        android:alpha="0"
         android:textColor="@color/black"
         android:layout_marginStart="30dp"
         android:textSize="16sp"
@@ -257,12 +262,14 @@
         app:layout_constraintTop_toBottomOf="@id/penyakit_lain"
         app:layout_constraintVertical_bias="0.0">
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_penyakit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:alpha="0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="parent">
@@ -310,8 +317,19 @@
     </Button>
 
 
+    <ProgressBar
+        android:id="@+id/shimmering2"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue_primary"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toTopOf="@+id/button_selfcare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kamera_view">
 
-
+    </ProgressBar>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

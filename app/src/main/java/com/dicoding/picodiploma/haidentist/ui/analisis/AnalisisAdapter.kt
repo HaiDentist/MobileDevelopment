@@ -6,9 +6,18 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.haidentist.R
+import com.dicoding.picodiploma.haidentist.data.Care
 
-class AnalisisAdapter: RecyclerView.Adapter<AnalisisAdapter.ViewHolder>() {
-
+class AnalisisAdapter:
+    RecyclerView.Adapter<AnalisisAdapter.ViewHolder>() {
+//    PagingDataAdapter<ListStoryItem, PagingAdapter.MyViewHolder>(DIFF_CALLBACK) {
+//private val habitMap = LinkedHashMap<PageType, Habit>()
+//
+//
+//    fun submitData(habit: Care) {
+//        habitMap[key] = habit
+//        notifyDataSetChanged()
+//    }
 
     private val names = arrayOf(
         "Fraktur",

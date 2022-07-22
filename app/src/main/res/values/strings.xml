@@ -38,4 +38,11 @@
     <string name="about">About</string>
     <string name="rekomendasi_klinik_terdekat">Rekomendasi Klinik Terdekat</string>
     <string name="insert">Insert</string>
+    <string name="re_insert">Re-Insert</string>
+    <string name="dapat_menyebabkan">Dapat Menyebabkan :</string>
+    <string name="_12">12</string>
+    <string name="tue">Tue</string>
+    <string name="_07_30_am">07:30 Am</string>
+    <string name="dental_discoloration">Dental Discoloration</string>
+    <string name="report">Report</string>
 </resources>
