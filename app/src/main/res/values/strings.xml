@@ -45,4 +45,10 @@
     <string name="_07_30_am">07:30 Am</string>
     <string name="dental_discoloration">Dental Discoloration</string>
     <string name="report">Report</string>
+    <string name="notification">Notification</string>
+    <string name="informasi_dan_notifikasi">Informasi dan Notifikasi</string>
+    <string name="riwayat_hasil_analisis">Riwayat Hasil Analisis</string>
+    <string name="penyakit_dan_masalah_gigi">Penyakit dan Masalah Gigi</string>
+    <string name="belum_ada_informasi_terbaru">Belum ada informasi terbaru</string>
+    <string name="selfcare">SelfCare</string>
 </resources>

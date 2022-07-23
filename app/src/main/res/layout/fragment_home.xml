@@ -69,6 +69,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
         android:layout_marginTop="30dp"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,10 +125,11 @@
 
             <Button
                 android:id="@+id/button_gigi"
-                android:layout_width="160dp"
-                android:layout_height="40dp"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
                 android:text="@string/periksa_gigimu"
-                android:textSize="11sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageView3"
                 app:layout_constraintHorizontal_bias="0.47"
@@ -212,6 +215,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/selfcarebut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
@@ -293,6 +297,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/diseasebut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
@@ -302,6 +307,7 @@
             android:focusable="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+
                 android:background="@color/blue_secondary"
                 android:layout_width="71dp"
                 android:layout_height="71dp">

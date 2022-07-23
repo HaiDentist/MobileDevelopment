@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.haidentist.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.haidentist.R
 import com.dicoding.picodiploma.haidentist.ui.camera.upload.UploadFragment
+import com.dicoding.picodiploma.haidentist.ui.disease.DiseaseFragment
+import com.dicoding.picodiploma.haidentist.ui.selfcare.SelfcareActivity
 
 
 class HomeFragment : Fragment() {
@@ -50,6 +53,10 @@ class HomeFragment : Fragment() {
             }
         }
 
+        view?.findViewById<View>(R.id.diseasebut)?.setOnClickListener {
+            loadFragment(DiseaseFragment())
+        }
+
         view?.findViewById<RecyclerView>(R.id.rv_selfcare)?.apply {
             this.layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL,false)
             LinearLayoutManager.HORIZONTAL
@@ -61,7 +68,19 @@ class HomeFragment : Fragment() {
 //                false
 //            )
         }
+
+        view?.findViewById<View>(R.id.selfcarebut)?.setOnClickListener {
+            val intent = Intent(requireContext(),SelfcareActivity::class.java)
+            startActivity(intent)
+        }
         // TODO: Use the ViewModel
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        val transcation = parentFragmentManager.beginTransaction()
+        transcation.replace(R.id.mainContainer,fragment)
+        transcation.addToBackStack(null)
+        transcation.commit()
     }
 
 }

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginHorizontal="25dp"
+    android:layout_gravity="center"
+    android:layout_marginVertical="14dp"
+    android:layout_marginBottom="4dp"
+    card_view:cardCornerRadius="18dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    card_view:strokeWidth="3dp"
+    card_view:strokeColor="@color/blue_primary"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="4dp"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_more"
+            android:tint="@color/black"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintVertical_bias="0.021">
+
+        </ImageView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="18dp"
+            android:backgroundTint="#24FFFFFF"
+            card_view:cardElevation="0dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+            <CheckBox
+                android:id="@+id/check"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:buttonTint="@color/blue_primary">
+            </CheckBox>
+<!--                android:id="@+id/item_switch"-->
+<!--                android:layout_width="160dp"    &lt;!&ndash; This is the size you want &ndash;&gt;-->
+<!--                android:layout_height="160dp"-->
+<!--                android:button="@null"-->
+<!--                android:background="?android:attr/listChoiceIndicatorMultiple"/>-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/waktu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:text="07:30 Am"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            card_view:layout_constraintBottom_toTopOf="@+id/title"
+            card_view:layout_constraintEnd_toEndOf="@+id/title"
+            card_view:layout_constraintStart_toStartOf="@+id/title" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Kayang 1 Jam"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/cardView"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.dicoding.picodiploma.haidentist.databinding.ActivityMainBinding
 import com.dicoding.picodiploma.haidentist.ui.camera.upload.UploadFragment
 import com.dicoding.picodiploma.haidentist.ui.home.HomeFragment
+import com.dicoding.picodiploma.haidentist.ui.notification.NotificationFragment
 import com.dicoding.picodiploma.haidentist.ui.profile.ProfileFragment
 import com.dicoding.picodiploma.haidentist.ui.report.ReportFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
                 }
         }
 
+
         bottomNav.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.homeFragment -> {
@@ -59,6 +61,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.messageFragment -> {
                     loadFragment(ReportFragment())
+                    return@setOnItemSelectedListener true
+                }
+                R.id.informationFragment -> {
+                    loadFragment(NotificationFragment())
                     return@setOnItemSelectedListener true
                 }
                 else -> {

@@ -117,4 +117,7 @@ dependencies {
     //shimmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
+    //card view
+    implementation 'com.google.android.material:material:1.6.1'
+
 }

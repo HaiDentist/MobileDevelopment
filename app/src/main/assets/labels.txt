@@ -1,3 +1,5 @@
-Dental Discoloration
-Healthy
-Periodontal Disease
+caries
+fraktur
+gigi sehat
+plak
+whitespot
