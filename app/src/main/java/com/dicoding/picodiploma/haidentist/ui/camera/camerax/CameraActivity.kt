@@ -40,7 +40,7 @@ class CameraActivity : AppCompatActivity() {
     private lateinit var cameraBinding: LayoutCameraBinding
 
 
-    private val mInputSize = 150
+    private val mInputSize = 224
     private val mModelPath = "model.tflite"
     private val mLabelPath = "labels.txt"
     private lateinit var classifier: Classifier

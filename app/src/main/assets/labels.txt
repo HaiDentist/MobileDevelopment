@@ -1,5 +1,5 @@
-caries
-fraktur
-gigi sehat
-plak
-whitespot
+Karies
+Fraktur
+Gigi Sehat
+Plak
+White Spot

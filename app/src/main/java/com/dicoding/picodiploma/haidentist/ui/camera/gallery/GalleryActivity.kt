@@ -20,7 +20,7 @@ class GalleryActivity : AppCompatActivity() {
     private lateinit var binding : ActivityGalleryBinding
     private lateinit var image_gallery :ImageView
 
-    private val mInputSize = 150
+    private val mInputSize = 224
     private val mModelPath = "model.tflite"
     private val mLabelPath = "labels.txt"
     private lateinit var classifier: Classifier

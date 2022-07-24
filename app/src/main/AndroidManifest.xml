@@ -26,6 +26,9 @@
         android:theme="@style/Theme.HaiDentist"
         tools:targetApi="31">
         <activity
+            android:name=".DoctorActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.selfcare.SelfcareActivity"
             android:exported="false" />
         <activity

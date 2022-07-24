@@ -51,4 +51,6 @@
     <string name="penyakit_dan_masalah_gigi">Penyakit dan Masalah Gigi</string>
     <string name="belum_ada_informasi_terbaru">Belum ada informasi terbaru</string>
     <string name="selfcare">SelfCare</string>
+    <string name="back_button">Back Button</string>
+    <string name="gambar_dokter">gambar dokter</string>
 </resources>
