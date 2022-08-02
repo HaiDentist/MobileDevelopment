@@ -53,4 +53,133 @@
     <string name="selfcare">SelfCare</string>
     <string name="back_button">Back Button</string>
     <string name="gambar_dokter">gambar dokter</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="upcoming_selfcare">Upcoming SelfCare</string>
+    <string name="hello">Hello</string>
+    <string name="user_name">User Name</string>
+    <string name="beta_version">BETA-VERSION</string>
+    <string name="karies_suggestion">Karies suggestion</string>
+    <string name="perbanyak_asupan_vitamin_d">Perbanyak Asupan Vitamin D</string>
+    <string name="suggestion_treatment">Suggestion Treatment</string>
+    <string name="rekomendasi_perawatan_mandiri">Rekomendasi Perawatan Mandiri</string>
+    <string name="suggestion_treatment_2">Suggestion Treatment</string>
+
+
+    <!--  Database Local  -->
+    <string-array name="name">
+        <item>Jung Jae-Sung</item>
+        <item>Ji Sung</item>
+        <item>Lee See-Young</item>
+        <item>Lee Kyu-Hyung</item>
+        <item>Hwang Hee</item>
+        <item>Jung Min-A</item>
+        <item>Kwon Hwa-Woon</item>
+        <item>Oh Hyun-Joong</item>
+        <item>Kim Hye-Eun</item>
+        <item>Moon Hak-Jin</item>
+    </string-array>
+
+    <string-array name="category">
+        <item>Endodontist</item>
+        <item>Oral Surgeon</item>
+        <item>Periodontist</item>
+        <item>Prosthodontist</item>
+        <item>Pedodontist</item>
+        <item>Orthopaedics</item>
+        <item>Periodontology</item>
+        <item>Radiology</item>
+        <item>Oral Pathology</item>
+        <item>Preventive Dentistry</item>
+    </string-array>
+
+    <string-array name="rating">
+        <item>2.3</item>
+        <item>4.4</item>
+        <item>3.2</item>
+        <item>5.0</item>
+        <item>4.1</item>
+        <item>1.8</item>
+        <item>4.8</item>
+        <item>1.1</item>
+        <item>0.0</item>
+        <item>2.9</item>
+    </string-array>
+
+    <string-array name="schedule">
+        <item>07.00 am - 03.00 pm</item>
+        <item>08.00 am - 04.00 pm</item>
+        <item>09.00 am - 05.00 pm</item>
+        <item>10.00 am - 06.00 pm</item>
+        <item>11.00 am - 07.00 pm</item>
+        <item>12.00 am - 08.00 pm</item>
+        <item>08.00 am - 04.00 pm</item>
+        <item>09.00 am - 05.00 pm</item>
+        <item>10.00 am - 06.00 pm</item>
+        <item>11.00 am - 07.00 pm</item>
+    </string-array>
+
+    <string-array name="avatar">
+        <item>@drawable/avatar10</item>
+        <item>@drawable/avatar2</item>
+        <item>@drawable/avatar3</item>
+        <item>@drawable/avatar4</item>
+        <item>@drawable/avatar5</item>
+        <item>@drawable/avatar6</item>
+        <item>@drawable/avatar7</item>
+        <item>@drawable/avatar8</item>
+        <item>@drawable/avatar9</item>
+        <item>@drawable/avatar1</item>
+    </string-array>
+
+
+    <!--  Offline Consultation  -->
+    <string name="endodontist">Endodontist</string>
+    <string name="location">Lokasi</string>
+    <string name="clinic_name">Klinik Denta Medica</string>
+    <string name="clinic_location">Rappocini, Kota Makassar</string>
+    <string name="clinic">Rumah Sakit</string>
+    <string name="date_and_time">Tanggal dan waktu</string>
+    <string name="month">April 2022</string>
+    <string name="choose_date">Pilih slot waktu</string>
+    <string name="book">Book</string>
+
+
+    <!--  Online Consultation  -->
+    <string name="phone">Telepon</string>
+    <string name="phone_call">Panggilan Video</string>
+    <string name="hint_chat">Say something...</string>
+    <string name="open_camera">Buka Kamera</string>
+    <string name="send_message">Kirim Pesan</string>
+    <string name="message">Message</string>
+
+    <!--  Profile  -->
+    <string name="gender">Jenis Kelamin</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="other">Other</string>
+    <string name="log_out">Log Out</string>
+
+    <!--  Consultation & Doctor  -->
+    <string name="available_consultation">Available Consultation</string>
+    <string name="today_treatment">Today Treatment</string>
+    <string name="dentist_appointment">Dentist Appointment</string>
+    <string name="doctor_image">Gambar Dokter</string>
+    <string name="doctor_profile">Doctor Profile</string>
+    <string name="doctor_name">Doctor Name</string>
+    <string name="verified">Verified</string>
+    <string name="online">Online</string>
+    <string name="rate">Rating</string>
+    <string name="schedule">Schedule</string>
+    <string name="lorem_less">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet diam massa, id ultrices metus.</string>
+    <string name="online_consultation">Online\nConsultation</string>
+    <string name="offline_consultation">Offline\nConsultation</string>
+    <string name="offline_consultation_toolbar">Offline Consultation</string>
+    <string name="tos_cosultation">Sebelum melakukan konsultasi, pastikan jenis konsultasi yang anda pilih berdasarkan kebutuhan anda.</string>
+    <string name="point">pointer</string>
+
+    <!--  Time  -->
+    <string name="days">Sun</string>
+    <string name="date">2</string>
+    <string name="clock">08:00</string>
+
+
 </resources>

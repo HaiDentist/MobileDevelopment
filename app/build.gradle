@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
     id 'com.google.gms.google-services'
 }
 
@@ -24,10 +25,10 @@ android {
         }
     }
 
+
     buildFeatures {
         viewBinding = true
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -119,5 +120,9 @@ dependencies {
 
     //card view
     implementation 'com.google.android.material:material:1.6.1'
+
+    //lottie
+    implementation "com.airbnb.android:lottie-compose:5.2.0"
+
 
 }

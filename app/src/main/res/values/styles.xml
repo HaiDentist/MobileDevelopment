@@ -8,8 +8,9 @@
         <!-- Use windowSplashScreenAnimatedIcon to add either a drawable or an
              animated drawable. One of these is required. -->
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_logo_4_foreground</item>
+
         <!-- Required for animated icons -->
-        <item name="windowSplashScreenAnimationDuration">900</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
 
         <!-- Set the theme of the Activity that directly follows your splash screen. -->
         <!-- Required -->

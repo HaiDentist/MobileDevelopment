@@ -19,7 +19,6 @@ class OnBoarding : AppCompatActivity() {
         binding = ActivityOnBoardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         supportActionBar?.hide()
         setupAction()
     }

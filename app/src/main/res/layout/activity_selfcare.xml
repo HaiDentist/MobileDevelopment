@@ -56,8 +56,41 @@
         android:layout_marginStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:listitem="@layout/item_row_time">
     </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/periksadahulu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:layout_marginTop="90dp"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:src="@drawable/maskot_2"
+            >
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nunito_extrabolditalic"
+            android:textColor="@color/blue_primary"
+            android:layout_marginTop="10dp"
+            android:text="Periksa Gigimu Terlebih Dahulu yah :)">
+
+        </TextView>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_care"
@@ -69,7 +102,8 @@
         android:layout_marginHorizontal="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rv_time"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_row_care">
 
     </androidx.recyclerview.widget.RecyclerView>
 

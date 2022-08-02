@@ -95,6 +95,19 @@
         android:layout_marginHorizontal="30dp"
         style="@style/Widget.AppCompat.Button.Small"/>
 
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal|bottom"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/beta"
+        android:width="30dp"
+        android:text="@string/beta_version"
+        android:textSize="15sp"
+        android:fontFamily="@font/nunito_black"
+        android:textColor="@color/blue_white"
+        android:layout_marginHorizontal="30dp" />
+
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

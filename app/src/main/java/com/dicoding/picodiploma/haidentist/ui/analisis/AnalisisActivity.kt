@@ -1,10 +1,17 @@
 package com.dicoding.picodiploma.haidentist.ui.analisis
 
+import android.app.Dialog
 import android.content.ContentValues.TAG
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.Window
+import android.widget.Button
+import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +20,7 @@ import com.dicoding.picodiploma.haidentist.R
 import com.dicoding.picodiploma.haidentist.databinding.ActivityAnalisisBinding
 import com.dicoding.picodiploma.haidentist.databinding.ActivityCameraBinding
 import com.dicoding.picodiploma.haidentist.ui.home.HomeAdapter
+import com.dicoding.picodiploma.haidentist.ui.selfcare.SelfcareActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -28,7 +36,7 @@ class AnalisisActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
 
-
+        val penyakit = intent.getStringExtra("penyakit")
         binding.rvPenyakit.apply {
             this.layoutManager = LinearLayoutManager(this@AnalisisActivity, RecyclerView.VERTICAL,false)
             LinearLayoutManager.VERTICAL
@@ -36,6 +44,8 @@ class AnalisisActivity : AppCompatActivity() {
             this.adapter = adapter
 
         }
+
+
 
         db.collection("penyakit").document(intent.getStringExtra("penyakit").toString())
             .get()
@@ -52,9 +62,17 @@ class AnalisisActivity : AppCompatActivity() {
                 Log.w(TAG, "Error getting documents.", exception)
             }
 
-        binding.buttonSelfcare.setOnClickListener {
 
+        binding.btnSelfcare.setOnClickListener {
+            val intent = Intent(this, SelfcareActivity::class.java)
+                .putExtra("perawatan", penyakit)
+            startActivity(intent)
+            Toast.makeText(this, "SelfCare" , Toast.LENGTH_LONG).show()
         }
+        binding.buttonRumahSakit.setOnClickListener {
+            customDialog()
+        }
+
 
 //        when(intent.getStringExtra("penyakit").toString()) {
 //            "Dental Discoloration" -> {
@@ -87,6 +105,19 @@ class AnalisisActivity : AppCompatActivity() {
         binding.scrollView2.alpha = 1f
         binding.penyakitLain.alpha = 1f
         binding.rvPenyakit.alpha = 1f
+    }
+
+    fun customDialog() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setContentView(R.layout.custom_dialog)
+
+        val btntutup = dialog.findViewById<Button>(R.id.btn_dialog)
+        btntutup.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 
 }

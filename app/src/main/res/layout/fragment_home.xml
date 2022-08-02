@@ -10,45 +10,38 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="164dp"
         android:fontFamily="@font/nunito_semibold"
-        android:text="Hello"
+        android:text="@string/hello"
         android:textColor="@color/black"
-
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/username"
-        app:layout_constraintEnd_toEndOf="@+id/username"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="19dp"
         android:layout_height="19dp"
-        android:layout_marginTop="1dp"
         android:src="@drawable/ic_hand_smalll"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="@+id/username"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/username">
 
     </ImageView>
 
     <TextView
         android:id="@+id/username"
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
+        android:layout_marginStart="15dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
         android:layout_marginTop="54dp"
-        android:layout_marginEnd="20dp"
         android:fontFamily="@font/nunito_bold"
-        android:text="A.Aksa Nur Irwan"
-        android:textSize="27sp"
+        android:text="How Are You Today ?"
+        android:textSize="25sp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -173,6 +166,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/doctorbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
@@ -186,6 +180,8 @@
                 android:layout_width="71dp"
                 android:layout_height="71dp">
 
+
+
                 <ImageView
                     android:id="@+id/dokter"
                     android:layout_width="45dp"
@@ -195,7 +191,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
-
                 </ImageView>
 
                 <TextView
@@ -209,6 +204,33 @@
                     app:layout_constraintTop_toBottomOf="@+id/dokter">
 
                 </TextView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="-18dp"
+                    android:rotation="35"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.18">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:gravity="center_horizontal"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textColor="@color/blue_primary"
+                        android:text="@string/coming_soon"
+                        android:textSize="8sp"
+                        tools:ignore="SmallSp">
+
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -256,6 +278,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/clinicbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
@@ -265,9 +288,10 @@
             android:focusable="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="71dp"
+                android:layout_width="match_parent"
                 android:layout_height="71dp"
                 android:background="@color/blue_white">
+
 
                 <ImageView
                     android:id="@+id/clinic"
@@ -289,7 +313,35 @@
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/clinic"/>
+                    app:layout_constraintTop_toBottomOf="@+id/clinic" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="-18dp"
+                    android:rotation="35"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.18">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:gravity="center_horizontal"
+                        android:text="@string/coming_soon"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textColor="@color/blue_primary"
+                        android:textSize="8sp"
+                        tools:ignore="SmallSp">
+
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -344,9 +396,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="125dp"
+        android:layout_marginEnd="190dp"
         android:fontFamily="@font/nunito_bold"
-        android:text="Upcoming SelfCare (Today)"
+        android:text="@string/upcoming_selfcare"
         android:textColor="@color/black"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -367,4 +419,25 @@
         app:layout_constraintVertical_bias="0.3">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_loading"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:lottie_rawRes="@raw/loading"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:lottie_speed="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </com.airbnb.lottie.LottieAnimationView>
+
+<!--    android:layout_width="150dp"-->
+<!--    android:layout_height="150dp"-->
+<!--    app:lottie_rawRes="@raw/tooth"-->
+<!--    app:lottie_autoPlay="true"-->
+<!--    app:lottie_speed="1.25"-->
+<!--    app:lottie_loop="true"/>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

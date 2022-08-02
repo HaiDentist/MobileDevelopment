@@ -285,12 +285,12 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/button_selfcare"
+        android:id="@+id/btn_selfcare"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginHorizontal="40dp"
         android:fontFamily="@font/nunito_bold"
-        android:text="Rekomendasi Perawatan Mandiri"
+        android:text="@string/rekomendasi_perawatan_mandiri"
         android:textAllCaps="false"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -310,7 +310,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_selfcare"
+        app:layout_constraintTop_toBottomOf="@+id/btn_selfcare"
         app:layout_constraintVertical_bias="0.16000003"
         android:textAllCaps="false"
         android:fontFamily="@font/nunito_bold"
@@ -330,7 +330,7 @@
         android:indeterminate="true"
         android:indeterminateTint="@color/blue_primary"
         android:indeterminateTintMode="src_atop"
-        app:layout_constraintBottom_toTopOf="@+id/button_selfcare"
+        app:layout_constraintBottom_toTopOf="@+id/btn_selfcare"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kamera_view">

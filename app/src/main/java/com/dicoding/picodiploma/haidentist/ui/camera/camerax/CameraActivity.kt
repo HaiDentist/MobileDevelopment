@@ -2,6 +2,7 @@ package com.dicoding.picodiploma.haidentist.ui.camera.camerax
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.drawable.BitmapDrawable
@@ -14,31 +15,40 @@ import android.util.Rational
 import android.view.Surface
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import com.bumptech.glide.Glide
 import com.dicoding.picodiploma.haidentist.R
+import com.dicoding.picodiploma.haidentist.data.local.UserPreference
+import com.dicoding.picodiploma.haidentist.data.model.Disease
 import com.dicoding.picodiploma.haidentist.databinding.ActivityCameraBinding
 import com.dicoding.picodiploma.haidentist.databinding.LayoutCameraBinding
 import com.dicoding.picodiploma.haidentist.ui.analisis.AnalisisActivity
 import com.dicoding.picodiploma.haidentist.utils.Classifier
 import com.malkinfo.progressbar.uitel.LoadingDialog
+import com.malkinfo.progressbar.uitel.LoadingDialogSpin
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.ExecutorService
 
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "localdata")
 class CameraActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCameraBinding
     private var imageFile: File? = null
+    private lateinit var preference: UserPreference
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
     private var imageCapture: ImageCapture? = null
     private lateinit var cameraBinding: LayoutCameraBinding
-
+    private val cameraViewModel: CameraViewModel by viewModels()
 
     private val mInputSize = 224
     private val mModelPath = "model.tflite"
@@ -53,6 +63,7 @@ class CameraActivity : AppCompatActivity() {
         binding = ActivityCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        preference = UserPreference.getInstance(dataStore)
 
         initClassifier()
         //Request Camera Permissions
@@ -72,6 +83,14 @@ class CameraActivity : AppCompatActivity() {
             binding.check.visibility = View.VISIBLE
             binding.retake.visibility = View.VISIBLE
             binding.layout.visibility = View.VISIBLE
+            val loading = LoadingDialogSpin(this)
+            loading.startLoading()
+            val handler = Handler()
+            handler.postDelayed(object :Runnable{
+                override fun run() {
+                    loading.isDismiss()
+                }
+            },2000)
         }
 
         cameraBinding.switchCamera.setOnClickListener {
@@ -92,16 +111,20 @@ class CameraActivity : AppCompatActivity() {
             val penyakit = result.get(0).title
 
 
-            runOnUiThread { Toast.makeText(this, result.get(0).title + " " + result.get(0).confidence , Toast.LENGTH_SHORT).show() }
+//            runOnUiThread {penyakit = result.get(0).title }
+            val disease = Disease(
+                disease = result[0].title
+            )
+            cameraViewModel.savedisease(disease,preference)
 
             val loading = LoadingDialog(this)
             loading.startLoading()
             val handler = Handler()
-            val intent = Intent(this, AnalisisActivity::class.java)
-            intent.putExtra("penyakit",penyakit)
             handler.postDelayed(object :Runnable{
                 override fun run() {
                     loading.isDismiss()
+                    val intent = Intent(this@CameraActivity, AnalisisActivity::class.java)
+                    intent.putExtra("penyakit",penyakit)
                     startActivity(intent)
                 }
             },3000)
@@ -118,6 +141,11 @@ class CameraActivity : AppCompatActivity() {
 
 
     }
+
+    suspend fun save(disease: Disease, preference: UserPreference) {
+        preference.saveDisease(disease)
+    }
+
 
     private fun initClassifier() {
         classifier = Classifier(assets, mModelPath, mLabelPath, mInputSize)
@@ -194,7 +222,7 @@ class CameraActivity : AppCompatActivity() {
             //Select back camera as a default
             //val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
-            val viewPort = ViewPort.Builder(Rational(350, 170), Surface.ROTATION_0).build()
+            val viewPort = ViewPort.Builder(Rational(350, 150), Surface.ROTATION_0).build()
             val useCaseGroup = UseCaseGroup.Builder()
                 .addUseCase(preview)
                 //.addUseCase(imageAnalyzer)

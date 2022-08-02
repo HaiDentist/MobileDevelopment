@@ -94,42 +94,43 @@
         <TextView
             android:id="@+id/waktu"
             android:layout_width="0dp"
+
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_regular"
-            android:text="07:30 Am"
+            android:text="@string/suggestion_treatment"
             android:textColor="@color/white"
-            android:textSize="16sp"
-            card_view:layout_constraintBottom_toTopOf="@+id/title"
-            card_view:layout_constraintEnd_toEndOf="@+id/title"
-            card_view:layout_constraintStart_toStartOf="@+id/title" />
+            android:textSize="12sp"
+            card_view:layout_constraintBottom_toTopOf="@+id/title_home"
+            card_view:layout_constraintEnd_toEndOf="@+id/title_home"
+            card_view:layout_constraintStart_toStartOf="@+id/title_home" />
 
         <TextView
-            android:id="@+id/title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:id="@+id/title_home"
+            android:layout_width="170dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="18dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Kayang 1 Jam"
+            android:text="@string/perbanyak_asupan_vitamin_d"
             android:textColor="@color/white"
-            android:textSize="19sp"
+            android:lines="3"
+            android:layout_marginTop="20dp"
+            android:textSize="17sp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/cardView"
             card_view:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/next_task"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:alpha="0.6"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/nunito_regular"
-            android:text="Mandi Bola (09:00 Am)"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintStart_toStartOf="@+id/title"
-            card_view:layout_constraintTop_toBottomOf="@+id/title"
-            card_view:layout_constraintVertical_bias="0.31" />
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/click_white"
+            android:layout_marginEnd="5dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="60dp"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintBottom_toBottomOf="parent">
+        </ImageView>
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
