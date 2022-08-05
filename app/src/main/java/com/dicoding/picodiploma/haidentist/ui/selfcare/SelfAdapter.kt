@@ -1,20 +1,18 @@
 package com.dicoding.picodiploma.haidentist.ui.selfcare
 
-import android.app.Dialog
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
-import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.picodiploma.haidentist.R
 
-class SelfAdapter (private val onClick : (String) -> Unit ): RecyclerView.Adapter<SelfAdapter.ViewHolder>() {
+class SelfAdapter (private val onClick : (String,Boolean) -> Unit ): RecyclerView.Adapter<SelfAdapter.ViewHolder>() {
 
 
 
@@ -31,15 +29,26 @@ class SelfAdapter (private val onClick : (String) -> Unit ): RecyclerView.Adapte
             val title:TextView = view.findViewById(R.id.title)
         val butt:CardView = view.findViewById(R.id.selfcare_view)
         val check:CheckBox = view.findViewById(R.id.check)
+        val back:ConstraintLayout = view.findViewById(R.id.selfcare_background)
 
 
 
         fun bind(text:String) {
             butt.setOnClickListener {
-                onClick(text)
+                onClick(text,false)
             }
-            if (check.isChecked == true) {
-                title.text = "fuck"
+
+            check.setOnCheckedChangeListener { buttonView, isChecked ->
+                when(isChecked) {
+                    true -> {
+                        back.setBackgroundColor(Color.parseColor("#5FD85F"))
+                        title.setPaintFlags(title.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
+                    }
+                    false -> {
+                        back.setBackgroundColor(Color.TRANSPARENT)
+                        title.setPaintFlags(title.getPaintFlags() and Paint.STRIKE_THRU_TEXT_FLAG.inv())
+                    }
+                }
             }
         }
     }

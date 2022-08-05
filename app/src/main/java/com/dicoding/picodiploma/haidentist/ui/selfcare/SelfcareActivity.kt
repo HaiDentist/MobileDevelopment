@@ -49,7 +49,7 @@ class SelfcareActivity : AppCompatActivity() {
         preference = UserPreference.getInstance(dataStore)
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         binding.rvCare.visibility = View.GONE
-        val adapter = SelfAdapter{ text ->
+        val adapter = SelfAdapter{ text, click ->
             customDialog(text)
         }
 
