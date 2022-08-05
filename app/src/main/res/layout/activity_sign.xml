@@ -97,9 +97,6 @@
                     tools:ignore="SpeakableTextPresentCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
-    
-
-
 
 
             <com.google.android.material.textfield.TextInputLayout

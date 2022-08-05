@@ -180,6 +180,10 @@
     <string name="days">Sun</string>
     <string name="date">2</string>
     <string name="clock">08:00</string>
+    <string name="_2022">2022</string>
+    <string name="login_as_guest">Login as Guest</string>
+    <string name="atau">atau</string>
+    <string name="log_out_2">Log Out</string>
 
 
 </resources>

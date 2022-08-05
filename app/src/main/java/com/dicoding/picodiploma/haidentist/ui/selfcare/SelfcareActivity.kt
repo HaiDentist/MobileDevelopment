@@ -24,6 +24,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.dicoding.picodiploma.haidentist.MainActivity
 import com.dicoding.picodiploma.haidentist.R
 import com.dicoding.picodiploma.haidentist.data.local.UserPreference
 import com.dicoding.picodiploma.haidentist.databinding.ActivitySelfcareBinding
@@ -80,12 +81,15 @@ class SelfcareActivity : AppCompatActivity() {
             }
         }
 
-
-
                 binding.rvTime.apply {
             this.layoutManager = LinearLayoutManager(this@SelfcareActivity, RecyclerView.HORIZONTAL,false)
             LinearLayoutManager.HORIZONTAL
             this.adapter = WaktuAdapter() // Terbalik (Selfadapter dan TimeAdapter)
+        }
+
+        binding.buttonBack.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
 
 //        val adapter = RandomHabitAdapter { habit ->
@@ -111,6 +115,10 @@ class SelfcareActivity : AppCompatActivity() {
             .setTitle("Title")
             .setMessage(message)
             .setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which -> dialog.dismiss()  } )
+    }
+
+    private fun check() {
+
     }
 
     fun customDialog(text : String ) {

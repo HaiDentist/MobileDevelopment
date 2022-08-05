@@ -163,12 +163,13 @@
 
 
     <Button
+        android:id="@+id/logout"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/loglog"
         android:drawableTint="@color/white"
-        android:text="Log Out"
+        android:text="@string/log_out_2"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

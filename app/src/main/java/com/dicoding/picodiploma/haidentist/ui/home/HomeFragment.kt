@@ -15,7 +15,6 @@ import android.view.Window
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -23,7 +22,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.Lottie
 import com.dicoding.picodiploma.haidentist.R
 import com.dicoding.picodiploma.haidentist.data.local.UserPreference
 import com.dicoding.picodiploma.haidentist.ui.camera.upload.UploadFragment
@@ -62,7 +60,9 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         preference = UserPreference.getInstance(requireContext().dataStore)
-        view?.findViewById<RecyclerView>(R.id.rv_selfcare)?.visibility = View.GONE
+//        view?.findViewById<RecyclerView>(R.id.rv_selfcare)?.visibility = View.GONE
+//        view?.findViewById<View>(R.id.lottie_loading)?.visibility = View.GONE
+
         view?.findViewById<Button>(R.id.button_gigi)?.apply {
             this.setOnClickListener {
                 val transcation = parentFragmentManager.beginTransaction()
@@ -106,10 +106,12 @@ class HomeFragment : Fragment() {
             Toast.makeText(requireContext(), "Coming Soon" , Toast.LENGTH_SHORT).show()
         }
         viewModel.loaddisease(preference).observe(requireActivity()) {
-            Toast.makeText(requireContext(),it.disease, Toast.LENGTH_LONG).show()
            if (it.disease == "") {
+
+               view?.findViewById<TextView>(R.id.textView4)?.text = "Upcoming SelfCare (Periksa Gigi Dahulu)"
                view?.findViewById<View>(R.id.lottie_loading)?.visibility = View.VISIBLE
-               view?.findViewById<RecyclerView>(R.id.rv_selfcare)?.visibility = View.GONE
+//               view?.findViewById<RecyclerView>(R.id.rv_selfcare)?.visibility = View.GONE
+
            }else {
 
                db.collection("perawatan").document(it.disease)
@@ -118,8 +120,9 @@ class HomeFragment : Fragment() {
 
                        Hasil = result.data?.values!!.toTypedArray()
                        adapter.submitData(Hasil)
+                       view?.findViewById<TextView>(R.id.textView4)?.text = "Upcoming SelfCare"
                        view?.findViewById<View>(R.id.lottie_loading)?.visibility = View.GONE
-                       view?.findViewById<RecyclerView>(R.id.rv_selfcare)?.visibility = View.VISIBLE
+//                       view?.findViewById<RecyclerView>(R.id.rv_selfcare)?.visibility = View.VISIBLE
                    }
                    .addOnFailureListener { exception ->
                        Log.w(ContentValues.TAG, "Error getting documents.", exception)

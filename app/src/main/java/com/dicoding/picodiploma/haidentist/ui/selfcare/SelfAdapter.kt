@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -29,12 +30,16 @@ class SelfAdapter (private val onClick : (String) -> Unit ): RecyclerView.Adapte
         val waktu:TextView = view.findViewById(R.id.waktu)
             val title:TextView = view.findViewById(R.id.title)
         val butt:CardView = view.findViewById(R.id.selfcare_view)
+        val check:CheckBox = view.findViewById(R.id.check)
 
 
 
         fun bind(text:String) {
             butt.setOnClickListener {
                 onClick(text)
+            }
+            if (check.isChecked == true) {
+                title.text = "fuck"
             }
         }
     }

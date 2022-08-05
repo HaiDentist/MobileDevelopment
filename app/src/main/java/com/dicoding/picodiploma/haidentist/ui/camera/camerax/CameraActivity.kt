@@ -110,7 +110,6 @@ class CameraActivity : AppCompatActivity() {
             val result = classifier.recognizeImage(bitmap)
             val penyakit = result.get(0).title
 
-
 //            runOnUiThread {penyakit = result.get(0).title }
             val disease = Disease(
                 disease = result[0].title

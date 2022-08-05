@@ -39,22 +39,22 @@
         <entry key="app/src/main/res/layout/activity_gallery.xml" value="0.28946533203125" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2828125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28608623106786807" />
-        <entry key="app/src/main/res/layout/activity_offline_consultation.xml" value="0.29791666666666666" />
+        <entry key="app/src/main/res/layout/activity_offline_consultation.xml" value="0.2892054239908854" />
         <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_online_consultation.xml" value="0.14739583333333334" />
-        <entry key="app/src/main/res/layout/activity_selfcare.xml" value="0.2195490519205729" />
+        <entry key="app/src/main/res/layout/activity_selfcare.xml" value="0.45789133707682295" />
         <entry key="app/src/main/res/layout/activity_sign.xml" value="0.24439849853515627" />
         <entry key="app/src/main/res/layout/box_accent.xml" value="0.2703125" />
         <entry key="app/src/main/res/layout/calendar_cell.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.18272450764973958" />
         <entry key="app/src/main/res/layout/fragment_disease.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.24753723144531253" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18674316406250002" />
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.24028472900390627" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2561911010742187" />
         <entry key="app/src/main/res/layout/fragment_report.xml" value="0.3038837782142406" />
         <entry key="app/src/main/res/layout/fragment_upload.xml" value="0.23805389404296878" />
         <entry key="app/src/main/res/layout/item_message.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/item_row_care.xml" value="0.1452601114908855" />
+        <entry key="app/src/main/res/layout/item_row_care.xml" value="0.43221079508463545" />
         <entry key="app/src/main/res/layout/item_row_date.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/item_row_disease.xml" value="0.27303314208984375" />
         <entry key="app/src/main/res/layout/item_row_doctor.xml" value="0.23374023437500002" />
@@ -65,7 +65,8 @@
         <entry key="app/src/main/res/layout/item_row_time.xml" value="0.3589706420898438" />
         <entry key="app/src/main/res/layout/layout_camera.xml" value="0.221905517578125" />
         <entry key="app/src/main/res/layout/loading_item.xml" value="0.173870849609375" />
-        <entry key="app/src/main/res/layout/loading_item_2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/loading_item_2.xml" value="0.27457733154296876" />
+        <entry key="app/src/main/res/layout/loading_item_success.xml" value="0.128125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.28177083333333336" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_logo_3.xml" value="0.11" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_logo_3_round.xml" value="0.11" />

@@ -215,7 +215,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/month"
+            android:text="@string/_2022"
             android:layout_marginTop="35dp"
             android:fontFamily="@font/nunito_semibold"
             android:textColor="@color/black"
