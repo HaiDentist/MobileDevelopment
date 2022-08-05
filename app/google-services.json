@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "519709005043",
+    "firebase_url": "https://haidentist-65544-default-rtdb.firebaseio.com",
     "project_id": "haidentist-65544",
     "storage_bucket": "haidentist-65544.appspot.com"
   },
@@ -18,6 +19,43 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.dicoding.picodiploma.haidentist",
+            "certificate_hash": "4033de52923dadd498eb79aaa830adc1aec06f76"
+          }
+        },
+        {
+          "client_id": "519709005043-9b0vjurtc2qadldo45pud6brl41v36b1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_Q1cet8l6TBh8M6tLG1wZtHPc1gtiTcs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519709005043-9b0vjurtc2qadldo45pud6brl41v36b1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519709005043:android:2c15cb9858731d508a1386",
+        "android_client_info": {
+          "package_name": "com.hai.dentist.haidentist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519709005043-ph47rjgqhp21p2p0snbps260gdh754ri.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hai.dentist.haidentist",
             "certificate_hash": "4033de52923dadd498eb79aaa830adc1aec06f76"
           }
         },

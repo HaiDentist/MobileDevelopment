@@ -184,6 +184,8 @@
     <string name="login_as_guest">Login as Guest</string>
     <string name="atau">atau</string>
     <string name="log_out_2">Log Out</string>
+    <string name="konsultasi_dokter_gigi">Konsultasi Dokter Gigi</string>
+    <string name="periksa_gigi">Periksa Gigi</string>
 
 
 </resources>

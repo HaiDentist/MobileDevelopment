@@ -9,7 +9,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.dicoding.picodiploma.haidentist"
+        applicationId "com.hai.dentist.haidentist"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -26,12 +26,14 @@ android {
     }
 
 
-    buildFeatures {
-        viewBinding = true
-    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
     kotlinOptions {
         jvmTarget = '1.8'

@@ -318,7 +318,7 @@
         android:textColor="@color/gray"
         android:foreground="@drawable/background_button_accent_v3"
         android:background="@android:color/transparent"
-        android:text="@string/rekomendasi_klinik_terdekat"
+        android:text="@string/konsultasi_dokter_gigi"
         android:layout_marginTop="-5dp">
     </Button>
 

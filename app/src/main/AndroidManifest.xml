@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dicoding.picodiploma.haidentist">
+    package="com.hai.dentist.haidentist">
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -26,35 +26,35 @@
         android:theme="@style/Theme.HaiDentist"
         tools:targetApi="31">
         <activity
-            android:name=".ui.doctor.DoctorActivity"
+            android:name="com.hai.dentist.haidentist.ui.doctor.DoctorActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.doctorprofile.DoctorProfileActivity"
+            android:name="com.hai.dentist.haidentist.ui.doctorprofile.DoctorProfileActivity"
             android:exported="false"/>
         <activity
-            android:name=".ui.selfcare.SelfcareActivity"
+            android:name="com.hai.dentist.haidentist.ui.selfcare.SelfcareActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.camera.gallery.GalleryActivity"
+            android:name="com.hai.dentist.haidentist.ui.camera.gallery.GalleryActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.analisis.AnalisisActivity"
+            android:name="com.hai.dentist.haidentist.ui.analisis.AnalisisActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.camera.camerax.CameraActivity"
+            android:name="com.hai.dentist.haidentist.ui.camera.camerax.CameraActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.sign.SignActivity"
+            android:name="com.hai.dentist.haidentist.ui.auth.sign.SignActivity"
             android:exported="false" />
-        <activity android:name=".ui.consultation.online.OnlineConsultationActivity"
+        <activity android:name="com.hai.dentist.haidentist.ui.consultation.online.OnlineConsultationActivity"
             android:exported="false">
         </activity>
-        <activity android:name=".ui.consultation.offline.OfflineConsultationActivity"
+        <activity android:name="com.hai.dentist.haidentist.ui.consultation.offline.OfflineConsultationActivity"
             android:exported="false">
 
         </activity>
         <activity
-            android:name=".ui.onboarding.OnBoarding"
+            android:name="com.hai.dentist.haidentist.ui.onboarding.OnBoarding"
             android:exported="true"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>
@@ -64,10 +64,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.auth.login.LoginActivity"
+            android:name="com.hai.dentist.haidentist.ui.auth.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.hai.dentist.haidentist.MainActivity"
             android:exported="false" />
     </application>
 

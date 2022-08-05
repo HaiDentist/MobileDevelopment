@@ -15,26 +15,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/button_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:contentDescription="@string/upload_gambar"
-            android:src="@drawable/ic_arrow_back"
-            app:tint="@color/black">
-
-        </ImageButton>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
+            android:textSize="18sp"
             android:fontFamily="@font/nunito_bold"
-            android:text="@string/upload_gambar"
+            android:text="@string/periksa_gigi"
             android:textColor="@color/black">
-
         </TextView>
+
     </androidx.appcompat.widget.Toolbar>
 
 
