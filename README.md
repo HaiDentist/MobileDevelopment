@@ -4,6 +4,6 @@
 </h1>
 
 <h1 align = "center >
-<img src="gambar/thumbnail.jpg">
+<img src="MobileDevelopment/gambar/thumbnail.jpg">
 </h1>
 
