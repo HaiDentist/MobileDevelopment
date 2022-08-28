@@ -1,27 +1,34 @@
 package com.hai.dentist.haidentist.ui.report
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.hai.dentist.haidentist.R
+import java.util.*
 
-class ReportAdapter: RecyclerView.Adapter<ReportAdapter.ViewHolder>() {
+class ReportAdapter (val context: Context): RecyclerView.Adapter<ReportAdapter.ViewHolder>() {
 
+
+    val c = Calendar.getInstance()
+
+    val year = c.get(Calendar.YEAR)
+    val month = c.get(Calendar.MONTH)
+    val day = c.get(Calendar.DAY_OF_MONTH)
+    val day2 = c.get(Calendar.DAY_OF_YEAR)
+
+    val hour = c.get(Calendar.HOUR_OF_DAY)
+    val minute = c.get(Calendar.MINUTE)
 
     private val tanggal = arrayOf(
-        11,
-        12,
-        13,
-        14
+        day,
     )
 
     private val judul = arrayOf(
-        "Dental Discoloration",
-        "Fraktur",
-        "Caries",
-        "White Spot"
+        "Hasil Analisis Gigi",
     )
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -29,6 +36,7 @@ class ReportAdapter: RecyclerView.Adapter<ReportAdapter.ViewHolder>() {
             val judul:TextView = view.findViewById(R.id.title_report)
             val hari:TextView = view.findViewById(R.id.hari_report)
             val time:TextView = view.findViewById(R.id.waktu_report)
+            val butt : View = view.findViewById(R.id.card_view)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) :ReportAdapter.ViewHolder =  ViewHolder(
@@ -38,6 +46,12 @@ class ReportAdapter: RecyclerView.Adapter<ReportAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ReportAdapter.ViewHolder, position: Int) {
        holder.tanggal.text = tanggal[position].toString()
         holder.judul.text = judul[position]
+        bind(context)
+    }
+
+    fun bind(context: Context) {
+        Toast.makeText(context, "Coming soon",
+            Toast.LENGTH_SHORT).show()
     }
 
     override fun getItemCount(): Int = tanggal.size

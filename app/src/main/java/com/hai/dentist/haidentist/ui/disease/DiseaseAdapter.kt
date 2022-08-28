@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.hai.dentist.haidentist.R
 
-class DiseaseAdapter:
+class DiseaseAdapter(private val onClick: (String) -> Unit):
     RecyclerView.Adapter<DiseaseAdapter.ViewHolder>() {
 //    PagingDataAdapter<ListStoryItem, PagingAdapter.MyViewHolder>(DIFF_CALLBACK) {
 //private val habitMap = LinkedHashMap<PageType, Habit>()
@@ -22,13 +23,18 @@ class DiseaseAdapter:
         "Fraktur",
         "Plak",
         "Karies",
-        "periodentitis",
-        "penyakit hati"
+        "White Spot"
     )
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val nama:TextView = view.findViewById(R.id.name_penyakit)
+            val butt:CardView = view.findViewById(R.id.butt)
 
+        fun bind(text:String) {
+            butt.setOnClickListener {
+                onClick(text)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) :DiseaseAdapter.ViewHolder =  ViewHolder(
@@ -37,6 +43,7 @@ class DiseaseAdapter:
 
     override fun onBindViewHolder(holder: DiseaseAdapter.ViewHolder, position: Int) {
         holder.nama.text = names[position]
+        holder.bind(names[position])
     }
 
     override fun getItemCount(): Int = names.size

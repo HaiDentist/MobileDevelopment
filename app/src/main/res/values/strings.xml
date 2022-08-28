@@ -63,7 +63,8 @@
     <string name="suggestion_treatment">Suggestion Treatment</string>
     <string name="rekomendasi_perawatan_mandiri">Rekomendasi Perawatan Mandiri</string>
     <string name="suggestion_treatment_2">Suggestion Treatment</string>
-
+    <string name="send_success">Berhasil terkirim</string>
+    <string name="send_error">Gagal terkirim</string>
 
     <!--  Database Local  -->
     <string-array name="name">
@@ -186,6 +187,10 @@
     <string name="log_out_2">Log Out</string>
     <string name="konsultasi_dokter_gigi">Konsultasi Dokter Gigi</string>
     <string name="periksa_gigi">Periksa Gigi</string>
+    <string name="penyakit_masalah_gigi_yang_berpotensi"><![CDATA[Penyakit & Masalah Gigi]]></string>
+    <string name="detail_penyakit">Detail Penyakit</string>
+    <string name="resiko">Resiko</string>
+    <string name="penyebab">Penyebab</string>
 
 
 </resources>

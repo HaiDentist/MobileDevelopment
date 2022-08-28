@@ -7,16 +7,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.hai.dentist.haidentist.R
 
-class AnalisisAdapter:
+class AnalisisAdapter(private val onClick : (String) -> Unit ):
     RecyclerView.Adapter<AnalisisAdapter.ViewHolder>() {
-//    PagingDataAdapter<ListStoryItem, PagingAdapter.MyViewHolder>(DIFF_CALLBACK) {
-//private val habitMap = LinkedHashMap<PageType, Habit>()
-//
-//
-//    fun submitData(habit: Care) {
-//        habitMap[key] = habit
-//        notifyDataSetChanged()
-//    }
+
+    private var Hasil : Array<*> = arrayOf("")
+
+    fun submitData(data: Array<*>) {
+        Hasil = data
+        notifyDataSetChanged()
+    }
 
     private val names = arrayOf(
         "Fraktur",
@@ -28,6 +27,13 @@ class AnalisisAdapter:
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val nama:TextView = view.findViewById(R.id.name_penyakit)
+            val butt:View = view.findViewById(R.id.butt)
+
+            fun bind(text:String) {
+            butt.setOnClickListener {
+                onClick(text)
+            }
+        }
 
     }
 
@@ -36,10 +42,12 @@ class AnalisisAdapter:
     )
 
     override fun onBindViewHolder(holder: AnalisisAdapter.ViewHolder, position: Int) {
-        holder.nama.text = names[position]
+        holder.nama.text = Hasil[position].toString().drop(1).dropLast(1)
+        holder.bind(Hasil[position].toString().drop(1).dropLast(1))
     }
 
-    override fun getItemCount(): Int = names.size
+
+    override fun getItemCount(): Int = Hasil.size
 }
 //
 //inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

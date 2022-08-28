@@ -113,7 +113,8 @@ class HomeFragment : Fragment() {
 
            }else {
 
-               db.collection("perawatan").document(it.disease)
+//               db.collection("perawatan").document(it.disease)
+               db.collection("perawatan").document("Fraktur")
                    .get()
                    .addOnSuccessListener { result ->
 

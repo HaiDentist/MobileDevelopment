@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -63,6 +64,7 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 else ->{
+                    binding.loadingProgress.visibility = View.VISIBLE
                     login(email, password)
                 }
             }
@@ -78,6 +80,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
+                    binding.loadingProgress.visibility = View.INVISIBLE
                     Log.d(TAG, "signInWithEmail:success")
                     val user = auth.currentUser
                     val mode =  UserDataModel(
@@ -91,7 +94,9 @@ class LoginActivity : AppCompatActivity() {
 
                 } else {
                     // If sign in fails, display a message to the user.
+                    binding.loadingProgress.visibility = View.INVISIBLE
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
+                    showalert(task.exception?.message!!)
                     Toast.makeText(baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
 
@@ -99,11 +104,30 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
-
-
-    private fun go() {
+    private fun showalert(msg: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Alert!")
+            .setMessage("Gagal Login!!\n$msg")
+            .setCancelable(true) // dialog box in cancellable
+            // set positive button
+            //take two parameters dialogInterface and an int
+            .setPositiveButton("Try again"){dialogInterface,it ->
+//                finish() // close the app when yes clicked
+                dialogInterface.cancel()
+            }
+//            .setNegativeButton("No"){dialogInterface,it ->
+//                // cancel the dialogbox
+//                dialogInterface.cancel()
+//            }
+//            .setNeutralButton("Help"){dialogInterface,it ->
+//                // just show a toast
+//                Toast.makeText(this,"Help Clicked",Toast.LENGTH_SHORT).show()
+//            }
+            .show()
 
     }
+
+
 
 
     private fun playAnimation() {

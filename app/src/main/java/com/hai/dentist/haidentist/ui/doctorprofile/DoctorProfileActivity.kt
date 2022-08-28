@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.hai.dentist.haidentist.data.model.DoctorModel
 import com.hai.dentist.haidentist.databinding.ActivityDoctorProfileBinding
 import com.hai.dentist.haidentist.ui.consultation.offline.OfflineConsultationActivity
+import com.hai.dentist.haidentist.ui.consultation.online.ChatActivity
 import com.hai.dentist.haidentist.ui.consultation.online.OnlineConsultationActivity
 import com.hai.dentist.haidentist.ui.doctor.DoctorActivity
 
@@ -54,7 +55,7 @@ class DoctorProfileActivity : AppCompatActivity() {
         }
 
         binding.onlineConsultation.setOnClickListener {
-            val intent = Intent(this, OnlineConsultationActivity::class.java)
+            val intent = Intent(this, ChatActivity::class.java)
             startActivity(intent)
         }
 

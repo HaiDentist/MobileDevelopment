@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_arrow_back.xml" value="0.191" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.11" />
+        <entry key="app/src/main/res/drawable-v24/rounded_message_yellow.xml" value="0.229" />
         <entry key="app/src/main/res/drawable/background_button_accent_v2.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/background_button_accent_v3.xml" value="0.1445" />
         <entry key="app/src/main/res/drawable/border_medium_radius.xml" value="0.1485" />
@@ -30,10 +31,12 @@
         <entry key="app/src/main/res/drawable/rounded_message_cornflower.xml" value="0.1485" />
         <entry key="app/src/main/res/drawable/splash.xml" value="0.129" />
         <entry key="app/src/main/res/layout-v23/fragment_profile.xml" value="0.2703125" />
-        <entry key="app/src/main/res/layout/activity_analisis.xml" value="0.23790283203125" />
+        <entry key="app/src/main/res/layout/activity_analisis.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_cam.xml" value="0.14351851851851852" />
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.213174890588831" />
         <entry key="app/src/main/res/layout/activity_camera2.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.19482392045788305" />
+        <entry key="app/src/main/res/layout/activity_disease_detail.xml" value="0.14322916666666666" />
         <entry key="app/src/main/res/layout/activity_doctor.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/activity_doctor_profile.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/activity_gallery.xml" value="0.28946533203125" />
@@ -47,19 +50,22 @@
         <entry key="app/src/main/res/layout/box_accent.xml" value="0.2703125" />
         <entry key="app/src/main/res/layout/calendar_cell.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.18272450764973958" />
+        <entry key="app/src/main/res/layout/custom_dialog_2.xml" value="0.2667388916015625" />
         <entry key="app/src/main/res/layout/fragment_disease.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18674316406250002" />
+        <entry key="app/src/main/res/layout/fragment_disease_detail.xml" value="0.1976786295572916" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.24028472900390627" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2561911010742187" />
         <entry key="app/src/main/res/layout/fragment_report.xml" value="0.3038837782142406" />
         <entry key="app/src/main/res/layout/fragment_upload.xml" value="0.23805389404296878" />
         <entry key="app/src/main/res/layout/item_message.xml" value="0.29791666666666666" />
+        <entry key="app/src/main/res/layout/item_message_2.xml" value="0.23252716064453116" />
         <entry key="app/src/main/res/layout/item_row_care.xml" value="0.3200220743815105" />
         <entry key="app/src/main/res/layout/item_row_date.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/item_row_disease.xml" value="0.27303314208984375" />
+        <entry key="app/src/main/res/layout/item_row_disease.xml" value="0.30096558450431954" />
         <entry key="app/src/main/res/layout/item_row_doctor.xml" value="0.23374023437500002" />
         <entry key="app/src/main/res/layout/item_row_hour.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/item_row_penyakit.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/layout/item_row_penyakit.xml" value="0.1874455769856771" />
         <entry key="app/src/main/res/layout/item_row_report.xml" value="0.20498809814453123" />
         <entry key="app/src/main/res/layout/item_row_selfcare.xml" value="0.24758758544921877" />
         <entry key="app/src/main/res/layout/item_row_time.xml" value="0.3589706420898438" />

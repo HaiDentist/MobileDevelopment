@@ -1,6 +1,7 @@
 package com.hai.dentist.haidentist.ui.consultation.offline
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +24,7 @@ class OfflineConsultationActivity : AppCompatActivity() {
         binding.buttonBack.setOnClickListener {
             super.onBackPressed()
         }
-
+        Toast.makeText(this, "Coming Soon", Toast.LENGTH_LONG).show()
         binding.rvDate.apply {
             layoutManager = LinearLayoutManager(
                 this@OfflineConsultationActivity,

@@ -61,6 +61,7 @@ class SelfcareActivity : AppCompatActivity() {
                 binding.periksadahulu.visibility = View.GONE
                 binding.rvCare.visibility = View.VISIBLE
 
+//                db.collection("perawatan").document(it.disease)
                 db.collection("perawatan").document(it.disease)
                     .get()
                     .addOnSuccessListener { result ->

@@ -5,27 +5,31 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.Window
 import android.widget.Button
+import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.hai.dentist.haidentist.R
-import com.hai.dentist.haidentist.databinding.ActivityAnalisisBinding
-import com.hai.dentist.haidentist.ui.selfcare.SelfcareActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.hai.dentist.haidentist.MainActivity
+import com.hai.dentist.haidentist.R
+import com.hai.dentist.haidentist.databinding.ActivityAnalisisBinding
 import com.hai.dentist.haidentist.ui.doctor.DoctorActivity
+import com.hai.dentist.haidentist.ui.selfcare.SelfcareActivity
 
 class AnalisisActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAnalisisBinding
     private val db = Firebase.firestore
+    lateinit var Hasil : Array<*>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,17 +38,17 @@ class AnalisisActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
 
-        val penyakit = intent.getStringExtra("penyakit")
-        binding.rvPenyakit.apply {
-            this.layoutManager = LinearLayoutManager(this@AnalisisActivity, RecyclerView.VERTICAL,false)
-            LinearLayoutManager.VERTICAL
-            val adapter = AnalisisAdapter()
-            this.adapter = adapter
-
+        Hasil = arrayOf("1","2")
+        val adapter = AnalisisAdapter{ text ->
+            customDialog(text)
         }
 
+        val penyakit = intent.getStringExtra("penyakit")
 
 
+
+//        db.collection("penyakit").document(intent.getStringExtra("penyakit").toString())
+        // default db collection diatas
         db.collection("penyakit").document(intent.getStringExtra("penyakit").toString())
             .get()
             .addOnSuccessListener { result ->
@@ -54,11 +58,45 @@ class AnalisisActivity : AppCompatActivity() {
                 binding.deskripsiPenyakit.text = result.get("desc").toString()
                 binding.namePenyakit.text = result.get("nama").toString()
                 binding.subPenyakit.text = result.get("sub").toString()
-                shimmerend()
+
+                    db.collection("potensi").document(intent.getStringExtra("penyakit").toString())
+                        .get()
+                        .addOnSuccessListener { hasi ->
+                            Hasil = hasi.data?.values!!.toTypedArray()
+//                            Hasil = arrayOf(
+//                                "1",
+//                                "2",
+//                                "3"
+//                            )
+//                            Toast.makeText(this, hasi.data!!.values.toString(),Toast.LENGTH_LONG).show()
+//                    Log.d(TAG,result.data?.values.toString())
+//                    println(result.data?.values.toString())
+//                    Toast.makeText(this, result.data?.values.toString(), Toast.LENGTH_LONG).show()
+                            adapter.submitData(Hasil)
+                            shimmerend()
+                        }
+                        .addOnFailureListener {
+                            Log.d(TAG, "onCreate: ")
+                        }
             }
             .addOnFailureListener { exception ->
                 Log.w(TAG, "Error getting documents.", exception)
             }
+
+//        db.collection("potensi").document(intent.getStringExtra("penyakit").toString())
+//            .get()
+//            .addOnSuccessListener { result ->
+////                Hasil = result.data?.values!!.toTypedArray()
+//                Hasil = arrayOf(
+//                    "1",
+//                    "2",
+//                    "3"
+//                )
+//                adapter.submitData(Hasil)
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.w(TAG, "Error getting documents.", exception)
+//            }
 
 
         binding.btnSelfcare.setOnClickListener {
@@ -67,33 +105,26 @@ class AnalisisActivity : AppCompatActivity() {
             startActivity(intent)
             Toast.makeText(this, "SelfCare" , Toast.LENGTH_LONG).show()
         }
+        binding.buttonBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.buttonRumahSakit.setOnClickListener {
             startActivity(Intent(this, DoctorActivity::class.java))
             finish()
         }
 
+        binding.rvPenyakit.apply {
+            this.layoutManager = LinearLayoutManager(this@AnalisisActivity, RecyclerView.VERTICAL,false)
+            LinearLayoutManager.VERTICAL
+//            val adapter = SelfAdapter{ text, click ->
+//                customDialog(text)
+//            }
+            this.adapter = adapter
 
-//        when(intent.getStringExtra("penyakit").toString()) {
-//            "Dental Discoloration" -> {
-//                binding.namePenyakit.setText(R.string.koksiodosis)
-//                binding.subPenyakit.setText(R.string.sub_koksiodosis)
-//                binding.gambarPenyakit.setImageResource(R.drawable.cocci)
-//                Glide.with(this).load
-//                binding.deskripsiPenyakit.setText(R.string.desc_koksiodosis)
-//            }
-//            "Healthy" -> {
-//                binding.namePenyakit.setText(R.string.healthy)
-//                binding.subPenyakit.setText(R.string.subhealthy)
-//                binding.gambarPenyakit.setImageResource(R.drawable.feceshealthy)
-//                binding.deskripsiPenyakit.setText(R.string.deschealthy)
-//            }
-//            "Periodontal Disease" -> {
-//                binding.namePenyakit.setText(R.string.newcastle)
-//                binding.subPenyakit.setText(R.string.subnewcastle)
-//                binding.gambarPenyakit.setImageResource(R.drawable.fesesncd)
-//                binding.deskripsiPenyakit.setText(R.string.desc_newcastle)
-//            }
-//        }
+        }
+
     }
 
     fun shimmerend() {
@@ -106,11 +137,30 @@ class AnalisisActivity : AppCompatActivity() {
         binding.rvPenyakit.alpha = 1f
     }
 
-    fun customDialog() {
+
+    fun response(text: String) : String {
+        var hasil : Any? = ""
+
+
+        return hasil.toString()
+    }
+
+    fun customDialog(text : String) {
+
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.setContentView(R.layout.custom_dialog)
+
+        dialog.setContentView(R.layout.custom_dialog_2)
+        db.collection("penjelasan").document(text)
+            .get()
+            .addOnSuccessListener { result ->
+                dialog.findViewById<ProgressBar>(R.id.customprog).visibility = View.GONE
+                dialog.findViewById<TextView>(R.id.dialog_text).text = result.get("desc").toString()
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents.", exception)
+            }
 
         val btntutup = dialog.findViewById<Button>(R.id.btn_dialog)
         btntutup.setOnClickListener {
@@ -118,5 +168,12 @@ class AnalisisActivity : AppCompatActivity() {
         }
         dialog.show()
     }
+
+//    fun customDialog(text : String ) {
+//        val dialog = Dialog(this)
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+//        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//        dialog.setContentView(R.layout.custom_dialog)
+//        dialog.findViewById<TextView>(R.id.dialog_text).text = text
 
 }

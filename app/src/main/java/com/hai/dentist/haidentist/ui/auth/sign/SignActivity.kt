@@ -3,12 +3,14 @@ package com.hai.dentist.haidentist.ui.auth.sign
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.hai.dentist.haidentist.databinding.ActivitySignBinding
 import com.hai.dentist.haidentist.ui.auth.login.LoginActivity
@@ -61,6 +63,7 @@ class SignActivity : AppCompatActivity() {
                     }
 
                     else ->{
+                        binding.loadingProgress.visibility = View.VISIBLE
                         create(email, password)
                     }
                 }
@@ -76,15 +79,41 @@ class SignActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
+                    binding.loadingProgress.visibility = View.INVISIBLE
                     customDialog()
                 } else {
                     // If sign in fails, display a message to the user.
+                    binding.loadingProgress.visibility = View.INVISIBLE
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                    showalert(task.exception?.message!!)
                     Toast.makeText(baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
                 }
             }
     }
+    private fun showalert(msg: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Alert!")
+            .setMessage("Gagal!!\n$msg")
+            .setCancelable(true) // dialog box in cancellable
+            // set positive button
+            //take two parameters dialogInterface and an int
+            .setPositiveButton("Try again"){dialogInterface,it ->
+//                finish() // close the app when yes clicked
+                dialogInterface.cancel()
+            }
+//            .setNegativeButton("No"){dialogInterface,it ->
+//                // cancel the dialogbox
+//                dialogInterface.cancel()
+//            }
+//            .setNeutralButton("Help"){dialogInterface,it ->
+//                // just show a toast
+//                Toast.makeText(this,"Help Clicked",Toast.LENGTH_SHORT).show()
+//            }
+            .show()
+
+    }
+
 
     fun customDialog() {
         val loading = LoadingDialogSuccess(this)

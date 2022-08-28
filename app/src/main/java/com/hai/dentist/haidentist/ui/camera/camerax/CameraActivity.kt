@@ -89,7 +89,7 @@ class CameraActivity : AppCompatActivity() {
                 override fun run() {
                     loading.isDismiss()
                 }
-            },2000)
+            },4000)
         }
 
         cameraBinding.switchCamera.setOnClickListener {
@@ -105,27 +105,30 @@ class CameraActivity : AppCompatActivity() {
         outputDirectory = getOutputDirectory()
 
         binding.check.setOnClickListener {
+
             val bitmap = ((binding.image).drawable as BitmapDrawable).bitmap
-            val result = classifier.recognizeImage(bitmap)
-            val penyakit = result.get(0).title
-
-//            runOnUiThread {penyakit = result.get(0).title }
-            val disease = Disease(
-                disease = result[0].title
-            )
-            cameraViewModel.savedisease(disease,preference)
-
             val loading = LoadingDialog(this)
             loading.startLoading()
             val handler = Handler()
             handler.postDelayed(object :Runnable{
                 override fun run() {
                     loading.isDismiss()
+
+
+                    val result = classifier.recognizeImage(bitmap)
+                    val penyakit = result.get(0).title
+
+//            runOnUiThread {penyakit = result.get(0).title }
+                    val disease = Disease(
+                        disease = result[0].title
+                    )
+                    cameraViewModel.savedisease(disease,preference)
+
                     val intent = Intent(this@CameraActivity, AnalisisActivity::class.java)
                     intent.putExtra("penyakit",penyakit)
                     startActivity(intent)
                 }
-            },3000)
+            },5000)
         }
 
         binding.retake.setOnClickListener {

@@ -41,7 +41,7 @@ class ReportFragment : Fragment() {
         view?.findViewById<RecyclerView>(R.id.rv_report)?.apply {
             this.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL,false)
             LinearLayoutManager.VERTICAL
-            adapter = ReportAdapter()
+            adapter = ReportAdapter(requireContext())
         }
     }
 

@@ -26,11 +26,17 @@
         android:theme="@style/Theme.HaiDentist"
         tools:targetApi="31">
         <activity
+            android:name=".ui.disease.detail.DiseaseDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.consultation.online.ChatActivity"
+            android:exported="false" />
+        <activity
             android:name="com.hai.dentist.haidentist.ui.doctor.DoctorActivity"
             android:exported="false" />
         <activity
             android:name="com.hai.dentist.haidentist.ui.doctorprofile.DoctorProfileActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name="com.hai.dentist.haidentist.ui.selfcare.SelfcareActivity"
             android:exported="false" />
@@ -46,13 +52,12 @@
         <activity
             android:name="com.hai.dentist.haidentist.ui.auth.sign.SignActivity"
             android:exported="false" />
-        <activity android:name="com.hai.dentist.haidentist.ui.consultation.online.OnlineConsultationActivity"
-            android:exported="false">
-        </activity>
-        <activity android:name="com.hai.dentist.haidentist.ui.consultation.offline.OfflineConsultationActivity"
-            android:exported="false">
-
-        </activity>
+        <activity
+            android:name=".ui.consultation.online.OnlineConsultationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.hai.dentist.haidentist.ui.consultation.offline.OfflineConsultationActivity"
+            android:exported="false" />
         <activity
             android:name="com.hai.dentist.haidentist.ui.onboarding.OnBoarding"
             android:exported="true"
