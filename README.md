@@ -3,7 +3,7 @@
   Hai Dentist
 </h1>
 
-<h1 align = "center >
-<img src="MobileDevelopment/gambar/thumbnail.jpg">
-</h1>
+
+<img src="gambar/gambar.png">
+
 
