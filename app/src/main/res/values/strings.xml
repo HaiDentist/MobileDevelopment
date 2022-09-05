@@ -191,6 +191,9 @@
     <string name="detail_penyakit">Detail Penyakit</string>
     <string name="resiko">Resiko</string>
     <string name="penyebab">Penyebab</string>
+    <string name="clinic_string">Clinic</string>
+    <string name="upcoming">Upcoming SelfCare (Periksa Gigi Dahulu)</string>
+    <string name="selff">Upcoming SelfCare</string>
 
 
 </resources>

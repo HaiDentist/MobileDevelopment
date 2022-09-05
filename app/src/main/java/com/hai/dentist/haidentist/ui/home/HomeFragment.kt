@@ -96,9 +96,9 @@ class HomeFragment : Fragment() {
         }
 
         view?.findViewById<View>(R.id.doctorbutton)?.setOnClickListener {
-//            Toast.makeText(requireContext(), "Coming Soon" , Toast.LENGTH_LONG).show()
-            val intent = Intent(requireContext(), DoctorActivity::class.java)
-            startActivity(intent)
+            Toast.makeText(requireContext(), "Coming Soon" , Toast.LENGTH_LONG).show()
+//            val intent = Intent(requireContext(), DoctorActivity::class.java)
+//            startActivity(intent)
         }
 
         view?.findViewById<View>(R.id.clinicbutton)?.setOnClickListener {
@@ -107,20 +107,20 @@ class HomeFragment : Fragment() {
         viewModel.loaddisease(preference).observe(requireActivity()) {
            if (it.disease == "") {
 
-               view?.findViewById<TextView>(R.id.textView4)?.text = "Upcoming SelfCare (Periksa Gigi Dahulu)"
+               view?.findViewById<TextView>(R.id.textView4)?.text = getString(R.string.upcoming)
                view?.findViewById<View>(R.id.lottie_loading)?.visibility = View.VISIBLE
 //               view?.findViewById<RecyclerView>(R.id.rv_selfcare)?.visibility = View.GONE
 
            }else {
 
-//               db.collection("perawatan").document(it.disease)
-               db.collection("perawatan").document("Fraktur")
+               db.collection("perawatan").document(it.disease)
+//               db.collection("perawatan").document("Fraktur")
                    .get()
                    .addOnSuccessListener { result ->
 
                        Hasil = result.data?.values!!.toTypedArray()
                        adapter.submitData(Hasil)
-                       view?.findViewById<TextView>(R.id.textView4)?.text = "Upcoming SelfCare"
+                       view?.findViewById<TextView>(R.id.textView4)?.text = getString(R.string.selff)
                        view?.findViewById<View>(R.id.lottie_loading)?.visibility = View.GONE
 //                       view?.findViewById<RecyclerView>(R.id.rv_selfcare)?.visibility = View.VISIBLE
                    }

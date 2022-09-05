@@ -89,12 +89,7 @@ class SelfcareActivity : AppCompatActivity() {
             finish()
         }
 
-//        val adapter = RandomHabitAdapter { habit ->
-//            val intent = Intent(this, CountDownActivity::class.java)
-//            intent.putExtra(HABIT, habit)
-//            startActivity(intent)
-//        }
-//        viewPager.adapter = adapter
+
 
         binding.rvCare.apply {
             this.layoutManager = LinearLayoutManager(this@SelfcareActivity, RecyclerView.VERTICAL, false)

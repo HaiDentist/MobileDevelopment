@@ -105,6 +105,7 @@ class AnalisisActivity : AppCompatActivity() {
             startActivity(intent)
             Toast.makeText(this, "SelfCare" , Toast.LENGTH_LONG).show()
         }
+
         binding.buttonBack.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
