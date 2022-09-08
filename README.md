@@ -1,8 +1,4 @@
 <h1 align="center">
-  Hai Dentist 
-</h1>
-
-<h1 align="center">
   Program Kreativitas Mahasiswa 2022 : HaiDentist
 </h1>
 
